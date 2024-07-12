@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0077BE;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: linear-gradient(to bottom, #0077BE, #005C8F);
+}
+
+#gameCanvas {
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+}
+
+#startScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    background-image: url('assets/images/field-pattern.png');
+    background-size: cover;
+    animation: fadeIn 0.5s ease-out;
+    z-index: 10;
+}
+
+/* Rest of the CSS remains the same */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#startScreen h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0077BE;
+    text-align: center;
+}
+
+#playerNameInput {
+    margin: 15px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #0077BE;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#playerNameInput:focus {
+    border-color: #005C8F;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #0077BE;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #005C8F;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#scoreTracker {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#leaderboard {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: #0077BE;
+}
+
+#leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#leaderboard th {
+    font-weight: 700;
+    color: #0077BE;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-height: 600px) {
+    #startScreen {
+        padding: 15px;
+    }
+    
+    #startScreen h1 {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    
+    #playerNameInput {
+        margin: 10px 0;
+        padding: 8px;
+    }
+    
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+        margin-top: 10px;
+    }
+    
+    .logo {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+    
+    #leaderboard {
+        margin-top: 15px;
+        padding: 10px;
+    }
+    
+    #leaderboard h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    #leaderboard th, #leaderboard td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
